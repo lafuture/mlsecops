@@ -1,0 +1,68 @@
+{
+  "model_base": "Qwen/Qwen2.5-7B-Instruct",
+  "lora": {
+    "r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ]
+  },
+  "training": {
+    "epochs": 1,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 4,
+    "learning_rate": 0.0002,
+    "max_seq_len": 128,
+    "optimizer": "AdamW"
+  },
+  "splits": {
+    "train_n": 676,
+    "valid_n": 84,
+    "test_n": 86
+  },
+  "train_loss": 2.187,
+  "eval_loss_final": 2.041,
+  "eval_loss_per_epoch": [
+    2.041
+  ],
+  "log_history": [
+    {
+      "loss": 2.312,
+      "grad_norm": 1.08,
+      "learning_rate": 0.0002,
+      "epoch": 0.25,
+      "step": 42
+    },
+    {
+      "loss": 2.198,
+      "grad_norm": 0.96,
+      "learning_rate": 0.0002,
+      "epoch": 0.5,
+      "step": 84
+    },
+    {
+      "loss": 2.156,
+      "grad_norm": 0.91,
+      "learning_rate": 0.0002,
+      "epoch": 0.75,
+      "step": 126
+    },
+    {
+      "loss": 2.124,
+      "grad_norm": 0.88,
+      "learning_rate": 0.0002,
+      "epoch": 1.0,
+      "step": 169
+    },
+    {
+      "epoch": 1.0,
+      "eval_loss": 2.041,
+      "eval_runtime": 124.3,
+      "eval_samples_per_second": 0.676,
+      "eval_steps_per_second": 0.676,
+      "step": 169
+    }
+  ]
+}
